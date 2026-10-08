@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Natalie Kan | Senior Talent Partner</title>
+  <meta name="description" content="Natalie Kan is a talent partner blending strategic hiring, thoughtful candidate experience, and modern AI workflows to build teams that last.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============ EDIT YOUR COLORS HERE ============ */
+    :root {
+      --bg: #faf8f6;
+      --bg-alt: #f0eeea;
+      --ink: #1a2230;
+      --muted: #5d6676;
+      --green: #386857;
+      --green-dark: #2d5547;
+      --clay: #c8703a;
+      --line: #e3e0da;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Manrope", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    :focus-visible { outline: 3px solid var(--clay); outline-offset: 3px; border-radius: 6px; }
+
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- Nav ---------- */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(250, 248, 246, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.5rem; letter-spacing: -0.01em; }
+    .logo span { color: var(--clay); }
+    .nav ul { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav ul a { color: var(--green); font-size: 1rem; }
+    .nav ul a:hover { text-decoration: underline; text-underline-offset: 6px; }
+    .nav ul a.pill {
+      background: var(--green); color: #fff; padding: 12px 22px; border-radius: 8px; font-weight: 500;
+    }
+    .nav ul a.pill:hover { background: var(--green-dark); text-decoration: none; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 72px 0 96px; }
+    .eyebrow {
+      color: var(--clay); font-size: 0.95rem; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 28px;
+    }
+    h1 {
+      font-family: "Fraunces", serif; font-weight: 600;
+      font-size: clamp(2.6rem, 7.2vw, 5.6rem);
+      line-height: 1.04; letter-spacing: -0.025em; max-width: 14ch;
+    }
+    h1 em { font-style: italic; font-weight: 500; color: var(--green); }
+    .hero p.sub { margin-top: 36px; max-width: 54ch; font-size: 1.25rem; color: var(--muted); font-weight: 400; }
+    .actions { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 16px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 17px 30px; border-radius: 8px; font-weight: 500; font-size: 1.05rem;
+      border: 1px solid var(--line); transition: background 0.15s, border-color 0.15s;
+    }
+    .btn.primary { background: var(--green); border-color: var(--green); color: #fff; }
+    .btn.primary:hover { background: var(--green-dark); }
+    .btn.ghost { background: #fff; }
+    .btn.ghost:hover { border-color: var(--green); }
+
+    /* ---------- Stats ---------- */
+    .stats { background: var(--bg-alt); border-top: 1px solid var(--line); padding: 56px 0; }
+    .stats .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .stat b {
+      display: block; font-family: "Fraunces", serif; font-weight: 400;
+      font-size: clamp(2.4rem, 5vw, 3.6rem); color: var(--green); line-height: 1.1;
+    }
+    .stat span { color: var(--muted); font-size: 1.05rem; }
+
+    /* ---------- Sections ---------- */
+    section.block { padding: 96px 0; border-top: 1px solid var(--line); }
+    section.block.alt { background: var(--bg-alt); }
+    h2 {
+      font-family: "Fraunces", serif; font-weight: 600;
+      font-size: clamp(2rem, 4.2vw, 3rem); letter-spacing: -0.02em; line-height: 1.12;
+      max-width: 20ch; margin-bottom: 28px;
+    }
+    h2 em { font-style: italic; font-weight: 500; color: var(--green); }
+    .lead { max-width: 62ch; color: var(--muted); font-size: 1.15rem; }
+    .lead + .lead { margin-top: 18px; }
+
+    /* About */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .facts { list-style: none; border-top: 1px solid var(--line); }
+    .facts li { display: flex; justify-content: space-between; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .facts li span:first-child { color: var(--muted); }
+    .facts li span:last-child { font-weight: 500; text-align: right; }
+
+    /* Workflows */
+    .flows { margin-top: 48px; border-top: 1px solid var(--ink); }
+    .flow { display: grid; grid-template-columns: 0.9fr 1.6fr; gap: 40px; padding: 32px 0; border-bottom: 1px solid var(--line); }
+    .flow h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.45rem; letter-spacing: -0.01em; }
+    .flow p { color: var(--muted); max-width: 60ch; }
+
+    /* Experience */
+    .roles { margin-top: 40px; border-top: 1px solid var(--ink); }
+    .role { display: grid; grid-template-columns: 0.9fr 1.6fr; gap: 40px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .role .when { color: var(--muted); }
+    .role h3 { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.3rem; }
+    .role p { color: var(--muted); margin-top: 6px; max-width: 60ch; }
+
+    /* Contact */
+    .contact { text-align: left; }
+    .contact .actions { margin-top: 32px; }
+
+    footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 860px) {
+      .nav ul li:not(:last-child) { display: none; }
+      .stats .grid { grid-template-columns: repeat(2, 1fr); }
+      .about, .flow, .role { grid-template-columns: 1fr; gap: 20px; }
+      .hero { padding: 48px 0 64px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header>
+    <div class="wrap nav">
+      <a href="#home" class="logo">Natalie Kan<span>.</span></a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#workflows">AI Workflows</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="pill">Let's talk</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="wrap">
+        <p class="eyebrow">Senior Talent Partner</p>
+        <h1>I help companies hire the people who <em>shape what's next.</em></h1>
+        <p class="sub">I'm Natalie Kan, a talent partner blending strategic hiring, thoughtful candidate experience, and modern AI workflows to build teams that last.</p>
+        <div class="actions">
+          <a class="btn primary" href="#workflows">Explore AI workflows
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn ghost" href="#experience">My experience</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS (edit numbers and labels) ============ -->
+    <section class="stats" aria-label="Highlights">
+      <div class="wrap grid">
+        <div class="stat"><b>500+</b><span>Hires closed</span></div>
+        <div class="stat"><b>92%</b><span>Offer acceptance</span></div>
+        <div class="stat"><b>35%</b><span>Faster time-to-fill</span></div>
+        <div class="stat"><b>10+</b><span>Years in talent</span></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="block" id="about">
+      <div class="wrap about">
+        <div>
+          <h2>Hiring that feels <em>human,</em> built to scale.</h2>
+          <p class="lead">I partner with sales leaders to find, close, and onboard the people who move a business forward. Most of my day is spent listening to hiring managers, getting to know candidates, and keeping the process clear and kind for everyone in it.</p>
+          <p class="lead">I also love finding smarter ways to work, so I use AI to cut the repetitive tasks and spend more time on conversations that matter.</p>
+        </div>
+        <ul class="facts">
+          <li><span>Focus</span><span>Go-to-market and sales hiring</span></li>
+          <li><span>Based in</span><span>San Jose, California</span></li>
+          <li><span>Works with</span><span>Hiring managers up to VP level</span></li>
+          <li><span>Strengths</span><span>Sourcing, closing, candidate experience</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ AI WORKFLOWS (keep examples generic, no internal tools or candidate data) ============ -->
+    <section class="block alt" id="workflows">
+      <div class="wrap">
+        <h2>AI workflows that give <em>time back.</em></h2>
+        <p class="lead">A few of the ways I use AI to hire faster without losing the personal touch. Every example here is built on general practices, never confidential data.</p>
+
+        <div class="flows">
+          <div class="flow">
+            <h3>Role intake to search strings</h3>
+            <p>Turning a job description and hiring manager notes into focused boolean searches, so sourcing starts on day one with a clear target.</p>
+          </div>
+          <div class="flow">
+            <h3>Personalized outreach</h3>
+            <p>Drafting first versions of candidate messages that I then rewrite in my own voice, so every note sounds like a real person wrote it.</p>
+          </div>
+          <div class="flow">
+            <h3>Screen and interview prep</h3>
+            <p>Building tailored question guides from a role's requirements, so every conversation is structured and fair.</p>
+          </div>
+          <div class="flow">
+            <h3>Weekly updates for leaders</h3>
+            <p>Turning raw pipeline notes into short, clear status updates that busy stakeholders can read in a minute.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE (replace with your real roles) ============ -->
+    <section class="block" id="experience">
+      <div class="wrap">
+        <h2>Where I've <em>done the work.</em></h2>
+        <div class="roles">
+          <div class="role">
+            <div class="when">2020 to present</div>
+            <div>
+              <h3>Senior Talent Partner, Go-to-Market</h3>
+              <p>Lead full-cycle recruiting for sales organizations, from intake to offer. Replace this line with your real highlights.</p>
+            </div>
+          </div>
+          <div class="role">
+            <div class="when">2016 to 2020</div>
+            <div>
+              <h3>Your previous role title</h3>
+              <p>One or two sentences on scope and results. Replace this line with your real highlights.</p>
+            </div>
+          </div>
+          <div class="role">
+            <div class="when">2014 to 2016</div>
+            <div>
+              <h3>Your earlier role title</h3>
+              <p>One or two sentences on scope and results. Replace this line with your real highlights.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="block alt contact" id="contact">
+      <div class="wrap">
+        <h2>Let's talk about <em>what's next.</em></h2>
+        <p class="lead">Hiring for a sales team, or curious about how I use AI in recruiting? I'd love to hear from you.</p>
+        <div class="actions">
+          <!-- Swap in your real LinkedIn URL and email -->
+          <a class="btn primary" href="https://www.linkedin.com/in/YOUR-LINKEDIN-NAME" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          <a class="btn ghost" href="mailto:you@example.com">Send an email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Natalie Kan</span>
+      <span>San Jose, California</span>
+    </div>
+  </footer>
+
+</body>
+</html>
